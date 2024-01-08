@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalETHBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalRETHSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "setTotalETHBalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "setTotalRETHSupply",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Kane Wallmann (Rocket Pool)",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Mocks just the required functions of RocketNetworkBalances",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/mock/RocketNetworkBalancesMock.sol": "RocketNetworkBalancesMock"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 20000
+		},
+		"remappings": [
+			":@eth-optimism/=lib/optimism/packages/contracts",
+			":@rocketpool/=lib/rocketpool/contracts",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"src/mock/RocketNetworkBalancesMock.sol": {
+			"keccak256": "0x6960f21bc69e091272cceb6cfd44f6afd623c1ecee82da80e6e2f73830ca7d1c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://34a24aea523c3662aed2f9b12683b362bc0f7c810d6e1877b71353bf40f1ec95",
+				"dweb:/ipfs/QmYkD1bKRHeK8q2od9F8XpXC6FTY7TdrYfqsWJQwqh6Qfu"
+			]
+		}
+	},
+	"version": 1
+}

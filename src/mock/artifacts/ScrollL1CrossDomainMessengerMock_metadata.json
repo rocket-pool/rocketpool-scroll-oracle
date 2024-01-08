@@ -1,0 +1,211 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "FailedRelayedMessage",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "RelayedMessage",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "messageNonce",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "gasLimit",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					}
+				],
+				"name": "SentMessage",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_target",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_message",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_gasLimit",
+						"type": "uint256"
+					}
+				],
+				"name": "sendMessage",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "xDomainMessageSender",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Kane Wallmann (Rocket Pool)",
+			"events": {
+				"FailedRelayedMessage(bytes32)": {
+					"params": {
+						"messageHash": "The hash of the message."
+					}
+				},
+				"RelayedMessage(bytes32)": {
+					"params": {
+						"messageHash": "The hash of the message."
+					}
+				},
+				"SentMessage(address,address,uint256,uint256,uint256,bytes)": {
+					"params": {
+						"gasLimit": "The optional gas limit passed to L1 or L2.",
+						"message": "The calldata passed to the target contract.",
+						"messageNonce": "The nonce of the message.",
+						"sender": "The address of the sender who initiates the message.",
+						"target": "The address of target contract to call.",
+						"value": "The amount of value passed to the target contract."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"FailedRelayedMessage(bytes32)": {
+					"notice": "Emitted when a cross domain message is failed to relay."
+				},
+				"RelayedMessage(bytes32)": {
+					"notice": "Emitted when a cross domain message is relayed successfully."
+				},
+				"SentMessage(address,address,uint256,uint256,uint256,bytes)": {
+					"notice": "Emitted when a cross domain message is sent."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"sendMessage(address,uint256,bytes,uint256)": {
+					"notice": "Mocks a cross domain call to the given target by executing it immediately on the current chain"
+				},
+				"xDomainMessageSender()": {
+					"notice": "Returns the mocked L1 sender address"
+				}
+			},
+			"notice": "Mocks a L1->L2 call by executing the call immediately on the target address on the current chain",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/mock/ScrollL1CrossDomainMessengerMock.sol": "ScrollL1CrossDomainMessengerMock"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 20000
+		},
+		"remappings": [
+			":@eth-optimism/=lib/optimism/packages/contracts",
+			":@rocketpool/=lib/rocketpool/contracts",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"src/interfaces/scroll/IScrollMessenger.sol": {
+			"keccak256": "0x442069e6445ffbb2a4784adf9ea6a03e8000dfb16059584adb3241bbd84481f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://de5158ebdced33dd426c7460fba1b5655849e42ffeeba3e254349144a2d213e5",
+				"dweb:/ipfs/QmQkrni9NHFGzJcMd7cTw9eiB9yVBqHv2zxvPJ8pjaD88N"
+			]
+		},
+		"src/mock/ScrollL1CrossDomainMessengerMock.sol": {
+			"keccak256": "0x040af895e950e783f24c9dbda4165dfa78ce27719b73a1acbf996521c8a21e9e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://def8c04d05f92d70493c70ff975570e6141f0c23ba511ef3ba4ef781dd7b5c48",
+				"dweb:/ipfs/QmehsKUMULvyrces4d5GKzKhFxzLtnyEQ3LpGxJdiD4rJJ"
+			]
+		}
+	},
+	"version": 1
+}
